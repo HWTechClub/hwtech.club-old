@@ -1,0 +1,22 @@
+{
+  "name": "stage1-website",
+  "version": "1.0.0",
+  "description": "This is the official tech club website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tech-club/stage1-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tech-club/stage1-website/issues"
+  },
+  "homepage": "https://github.com/Tech-club/stage1-website#readme",
+  "dependencies": {
+    "express-mvc-generator": "^2.2.4"
+  }
+}
