@@ -1,5 +1,21 @@
-# stage1-website
+# Stage1-website
 
-Run cd myapp/
+## How to run application:
 
-then node app.js
+1. Install all dependancies
+
+```javascript
+npm install
+```
+
+2. Start application with debugging mode
+
+```javascript
+DEBUG=techclub-website:* npm start
+```
+
+3. Open the website
+
+```javascript
+localhost:3000
+```
