@@ -11,7 +11,7 @@ npm install
 2. Start application with debugging mode
 
 ```javascript
-DEBUG=techclub-website:* npm start
+npm start
 ```
 
 3. Open the website
