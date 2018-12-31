@@ -1,11 +1,15 @@
+require('./controller /config/config');
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var {ObjectID} = require('mongodb');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var {mongoose} = require('./controller /db/mongoose');
+var indexRouter = require('./controller /routes/index');
+var usersRouter = require('./controller /routes/users');
 
 var app = express();
 

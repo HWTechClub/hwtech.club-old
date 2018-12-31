@@ -1,0 +1,89 @@
+<%- include("partials/header", {title:title}); %>
+<!-- contact
+    ================================================== -->
+    <section id="login" class="s-contact">
+
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Login</h3>
+                <h1 class="display-2 display-2--light">This is only for memebers</h1>
+                <h3 class="subhead"></h3>
+
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+            
+            <div class="contact-primary">
+
+                <h3 class="h6">Application Form</h3>
+
+                <form name="contactForm" method="post" action="https://formspree.io/akilanselva@hotmail.com" novalidate="novalidate">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="loginUsername" type="text" id="loginUsername" placeholder="Your username" value="" minlength="2" required aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="loginPassword" type="password" id="loginPassword" placeholder="Your password" value="" minlength="2" required aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Login</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Information</h3>
+
+                    <div class="cinfo">
+                        <h5>How to get an account?</h5>
+                        <p>
+                            The username and password will be sent either on whatsapp or email.
+                        </p>
+                    </div>
+                    <div class="cinfo">
+                        <h5>If you did not get you're username and password</h5>
+                        <p>
+                            Message on +971 52 7547820 
+                        </p>
+                    </div>
+                    <ul class="contact-social">
+                        <h5>Connect via Social Media!</h5>
+                            <a href="https://www.instagram.com/hwtechclub/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        </li>
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+<% include partials/footer %>

@@ -1,0 +1,97 @@
+<%- include("partials/header", {title:title}); %>
+<!-- contact
+    ================================================== -->
+    <section id="addmemo" class="s-contact">
+
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Add memo</h3>
+                <h1 class="display-2 display-2--light">Weekly progress</h1>
+                <h3 class="subhead"></h3>
+
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+            
+            <div class="contact-primary">
+
+                <h3 class="h6"></h3>
+
+                <form name="contactForm" method="post" action="" enctype="multipart/form-data">
+                    <fieldset>
+    
+                    <div class="form-field">
+                        <input name="TeamName" type="text" id="TeamName" placeholder="Your team name" value="" minlength="2" required aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <label for="week">Please add for the current week</label>
+                        <div class="cl-custom-select">
+                            <select class="full-width" id="week">
+                                <option value="Week 1">Week 1</option>
+                                <option value="Week 2">Week 2</option>
+                                <option value="Week 3">Week 3</option>
+                                <option value="Week 4">Week 4</option>
+                                <option value="Week 5">Week 5</option>
+                                <option value="Week 6">Week 6</option>
+                                <option value="Week 7">Week 7</option>
+                                <option value="Week 8">Week 8</option>
+                                <option value="Week 9">Week 9</option>
+                                <option value="Week 10">Week 10</option>
+                            </select>
+                        </div>
+                </div>
+                <br>
+                <div class="form-field">
+                    <input name="doc" type="file" id="doc" class="full-width">
+                </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Post</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    </fieldset>
+                </form>
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div> 
+            
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Information</h3>
+
+                    <div class="cinfo">
+                        <h5>Why do we have this?</h5>
+                        <p>
+                            We have this to track each and every teams progress. We takes steps 
+                            to improve efficiency. 
+                        </p>
+                    </div>
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+<% include partials/footer %>

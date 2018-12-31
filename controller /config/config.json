@@ -1,0 +1,7 @@
+{
+  "development": {
+    "PORT": 3000,
+    "MONGODB_URI": "mongodb://akilan:AKILAN1999@ds145574.mlab.com:45574/heroku_nncm58v4",
+    "JWT_SECRET": "asdkfjklsafjj134kj1k2"
+  }
+}
