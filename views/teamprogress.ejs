@@ -1,0 +1,20 @@
+<%- include("partials/header", {title:title}); %>
+
+<div class="team-progress">
+    <h1><span><%= team.replace("-"," ") %></span> Progress</h1>
+    <% if(progresses.length>0) { %>
+        <div class="team-progress-listing">
+            <% progresses.forEach(function(progress) { %>
+                <div class="team-progress-item">
+                    <h2><%= progress.subject %></h2>
+                    <h3><%= progress.date %></h3>
+                    <p><%= progress.memo %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <h2>No Progress Found!</h2>
+    <% } %>
+</div>
+
+<% include partials/footer %>

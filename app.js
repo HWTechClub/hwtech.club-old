@@ -10,6 +10,7 @@ var {ObjectID} = require('mongodb');
 var {mongoose} = require('./controller /db/mongoose');
 var indexRouter = require('./controller /routes/index');
 var usersRouter = require('./controller /routes/users');
+var progressRouter = require('./controller /routes/progress');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/progress', progressRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

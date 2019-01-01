@@ -19,9 +19,42 @@
             
             <div class="contact-primary">
 
-                <h3 class="h6"></h3>
+                <h3>Progress Memo</h3>
 
-                <form name="contactForm" method="post" action="" enctype="multipart/form-data">
+                <form method="post" action="/progress">
+                    <div class="form-field">
+                        <label for="week">Team Name</label>
+                        <div class="cl-custom-select">
+                            <select name="TeamName" id="TeamName" class="full-width">
+                                <option value="web-team" selected>Web Team</option>
+                                <option value="rocket-team">Rocket Team</option>
+                                <option value="unity-for-education">Unity for Education</option>
+                            </select>
+                        </div>    
+                    </div>
+                    <div class="form-field">
+                        <input name="MemoDate" type="text" id="MemoDate" placeholder="Memo Date" value="" minlength="2" required="required" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <input name="MemoSubject" type="text" id="MemoSubject" placeholder="Memo Subject" value="" minlength="2" required="required" aria-required="true" class="full-width">
+                    </div>
+                    <div class="form-field">
+                        <textarea name="MemoDesciption" id="MemoDesciption" placeholder="Memo Description" required="required" aria-required="true" cols="30" rows="10" class="full-width"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="full-width btn--primary">Post</button>
+                        <div class="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- <form name="contactForm" method="post" action="/progress" enctype="multipart/form-data">
                     <fieldset>
     
                     <div class="form-field">
@@ -48,6 +81,7 @@
                 <div class="form-field">
                     <input name="doc" type="file" id="doc" class="full-width">
                 </div>
+
                     <div class="form-field">
                         <button class="full-width btn--primary">Post</button>
                         <div class="submit-loader">
@@ -61,7 +95,7 @@
                     </div>
     
                     </fieldset>
-                </form>
+                </form> -->
 
                 <!-- contact-warning -->
                 <div class="message-warning">
@@ -73,7 +107,7 @@
                     Your message was sent, thank you!<br>
                 </div>
 
-            </div> <!-- end contact-primary -->
+            </div> end contact-primary
 
             <div class="contact-secondary">
                 <div class="contact-info">
