@@ -1,0 +1,30 @@
+<%- include("partials/header", {title:title}); %>
+
+<section>
+    <div class="home-content team-progress-header">
+        <div class="row home-content__main">
+            <h3><a href="/progress"><i class="fa fa-chevron-left"></i> Team Progress</a></h3>
+            <h1>What's the <span><%= team.replace(/-/g," ") %></span> up to?</h1> 
+        </div>
+    </div>
+    <div class="s-services">
+        <div class="row">
+            <% if(progresses.length>0) { %>
+                    <% progresses.forEach(function(progress) { %>
+                        <div class="col-four tab-full">
+                            <h2><%= progress.subject %></h2>
+                            <mark><%= progress.date %></mark>
+                            <p><%= progress.memo.substr(0,100).trim().concat("...") %></p>
+                            <a href="/progress/<%= progress.team %>/<%= progress.id %>" class="btn btn--primary full-width">View memo</a>
+                        </div>
+                    <% }) %>
+            <% } else { %>
+                <div class="col-twelve tab-full">
+                    <h2>No Progress Found!</h2>
+                </div> 
+            <% } %>
+        </div>    
+    </div>
+</section>
+
+<% include partials/footer %>

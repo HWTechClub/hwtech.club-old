@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 // GET new team progress page form.
 router.get('/new', function(req, res, next) {
-    res.render('addprogress', { title: 'Heriot Watt - Tech Club' });
+    res.render('progressadd', { title: 'Heriot Watt - Tech Club' });
 });
 
 // POST new team progress.
@@ -45,7 +45,7 @@ router.post('/', function(req, res, next) {
 
 });
 
-// GET team progress individual page.
+// GET team progress individual page listing all the memos.
 router.get('/:team', function(req, res, next) {
     // Get the team name from the parameters.
     var team = req.params.team;
@@ -63,7 +63,34 @@ router.get('/:team', function(req, res, next) {
         }
         // Else, display the team's progress page.
         else {
-            res.render('teamprogress', { title: 'Heriot Watt - Tech Club', team: team, progresses: result });
+            res.render('progressteam', { title: 'Heriot Watt - Tech Club', team: team, progresses: result });
+        }
+    });
+});
+
+// GET team progress individual memo.
+router.get('/:team/:memoId', function(req, res, next) {
+    // Get the team name from the parameters.
+    var team = req.params.team;
+
+    // Get the memo id from the parameters.
+    var memoId = req.params.memoId;
+
+    // Create a new query condition to match the team name and the memo id.
+    var query = {
+        team: team,
+        _id: memoId
+    }
+
+    // Query the database and find all the memos with the specified query.
+    Progress.find(query, function(err, result) {
+        // If any errors, console log it.
+        if (err) {
+            console.log(err);
+        }
+        // Else, display the progress memo page.
+        else {
+            res.render('progressmemo', { title: 'Heriot Watt - Tech Club', team: team, progress: result[0] });
         }
     });
 });
