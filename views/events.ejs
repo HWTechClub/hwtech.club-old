@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+    <!-- Icon -->
+    <!--<link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">-->
+    <!-- Slicknav -->
+    <!---<link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">-->
+    <!-- Nivo Lightbox -->
+    <!---<link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >-->
+    <!-- Animate -->
+    <!--<link rel="stylesheet" type="text/css" href="assets/css/animate.css">-->
+    <!-- Main Style -->
+    <!-- CSS
+    ================================================== -->
+
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/events.css">
+    <!-- Responsive Style -->
+    <!--<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">-->
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+
+    <!-- Schedule Section Start -->
+    <section id="schedules" class="schedule section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-header text-center">
+                        <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Event Schedules</h1>
+                        <p class="wow fadeInDown" data-wow-delay="0.2s">All the latest events hosted by <br> Tech Club
+                            and MACS (Mathematics And Computer Sciences) Department</p>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-area row wow fadeInDown" data-wow-delay="0.3s">
+                <div class="schedule-tab-title col-md-3 col-lg-3 col-xs-12">
+                    <div class="table-responsive">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link " id="back" href="/">
+                                    <div class="item-text">
+                                        <h4>Back</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <% for(var i = 0; i < events.length; i++){ %>
+                            <li class="nav-item">
+                                <%
+                                var active =""; 
+                                if (i == 0){
+                                  active = "active";
+                                }%>
+                                <a class="nav-link <%= active %>" id="monday-tab" data-toggle="tab"
+                                    href="#week<%= events[i].week %>" role="tab" aria-controls="monday"
+                                    aria-expanded="true">
+                                    <div class="item-text">
+                                        <h4>Week <%= events[i].week %></h4>
+                                        <h5><%= events[i].range %></h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <% } %>
+                            <!---<li class="nav-item">
+                                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab"
+                                    aria-controls="tuesday">
+                                    <div class="item-text">
+                                        <h4>Week 2</h4>
+                                        <h5>15 February</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#wednesday" role="tab"
+                                    aria-controls="wednesday">
+                                    <div class="item-text">
+                                        <h4>Week 3</h4>
+                                        <h5>16 February</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab"
+                                    aria-controls="thursday">
+                                    <div class="item-text">
+                                        <h4>Week 4</h4>
+                                        <h5>17 February</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab"
+                                    aria-controls="thursday">
+                                    <div class="item-text">
+                                        <h4>Week 5</h4>
+                                        <h5>17 February</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab"
+                                    aria-controls="thursday">
+                                    <div class="item-text">
+                                        <h4>Week 6</h4>
+                                        <h5>17 February</h5>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab"
+                                    aria-controls="thursday">
+                                    <div class="item-text">
+                                        <h4>Week 7</h4>
+                                        <h5>17 February</h5>
+                                    </div>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="schedule-tab-content col-md-9 col-lg-9 col-xs-12 clearfix">
+                    <div class="tab-content" id="myTabContent">
+                        <% for(var i = 0; i < events.length; i++){ %>
+                        <div class="tab-pane fade show active" id="week<%= events[i].week %>" role="tabpanel"
+                            aria-labelledby="week<%= events[i].week %>-tab">
+                            <div id="accordion">
+                                <% for(var j = 0; j < events[i].events.length; j++){ %>
+                                <div class="card">
+                                    <div id="week<%= events[i].week %><%= j %>">
+                                        <div class="collapsed card-header" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            <div class="images-box">
+                                                <img class="img-fluid"
+                                                    src="https://cdn57.androidauthority.net/wp-content/uploads/2017/08/android-authority-star-wars-ar-treasure-hunt-find-the-force.jpg"
+                                                    alt="">
+                                            </div>
+                                            <span class="time"><%= events[i].events[j].date %></span>
+                                            <h4><%= events[i].events[j].eventname %></h4>
+                                            <h5 class="name"><%= events[i].events[j].organization %></h5>
+                                        </div>
+                                    </div>
+                                    <%
+                                     var show =""; 
+                                     if (j == 0){
+                                     show = "show";
+                                     }%>
+                                    <div id="collapseThree" class="collapse <%= show %>" aria-labelledby="week<%= events[i].week %><%= j %>"
+                                        data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p><%= events[i].events[j].description %></p>
+                                            <div class="location">
+                                                <%if(events[i].events[j].location){ %>
+                                                <span>Location:</span> <%= events[i].events[j].roomNo %> , <%= events[i].events[j].location %>
+                                                <%} %>
+                                                <br>
+                                                <% for(var k = 0; k < events[i].events[j].link.length; k++) { %>
+                                                <a href="events[i].events[j].link[k].url" class="btn btn-primary"><p>events[i].events[j].link[k].name</p></a>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                        <% } %>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule Section End -->
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="/javascripts/bootstrap.js"></script>
+
+
+
+</body>
+
+</html>

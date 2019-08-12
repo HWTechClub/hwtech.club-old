@@ -11,6 +11,7 @@ var {mongoose} = require('./controller /db/mongoose');
 var indexRouter = require('./controller /routes/index');
 var usersRouter = require('./controller /routes/users');
 var progressRouter = require('./controller /routes/progress');
+var eventsRouter = require('./controller /routes/events');
 
 var app = express();
 
@@ -24,9 +25,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Segregated code for appropriate segments
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/progress', progressRouter);
+app.use('/events', eventsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
