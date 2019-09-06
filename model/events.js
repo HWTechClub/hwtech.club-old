@@ -7,6 +7,7 @@ var eventSchema = mongoose.Schema({
     events: [
         {
             eventname: String,
+            image: String,
             date: String,
             time: String,
             location: String,

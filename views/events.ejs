@@ -138,16 +138,16 @@
                         <% for(var i = 0; i < events.length; i++){ %>
                         <div class="tab-pane fade show active" id="week<%= events[i].week %>" role="tabpanel"
                             aria-labelledby="week<%= events[i].week %>-tab">
+                            <% for(var j = 0; j < events[i].events.length; j++){ %>
                             <div id="accordion">
-                                <% for(var j = 0; j < events[i].events.length; j++){ %>
                                 <div class="card">
                                     <div id="week<%= events[i].week %><%= j %>">
                                         <div class="collapsed card-header" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
+                                            data-target="#weekc<%= events[i].week %><%= j %>" aria-expanded="false"
+                                            aria-controls="weekc<%= events[i].week %><%= j %>">
                                             <div class="images-box">
                                                 <img class="img-fluid"
-                                                    src="https://cdn57.androidauthority.net/wp-content/uploads/2017/08/android-authority-star-wars-ar-treasure-hunt-find-the-force.jpg"
+                                                    src="<%= events[i].events[j].image %>"
                                                     alt="">
                                             </div>
                                             <span class="time"><%= events[i].events[j].date %></span>
@@ -160,7 +160,7 @@
                                      if (j == 0){
                                      show = "show";
                                      }%>
-                                    <div id="collapseThree" class="collapse <%= show %>" aria-labelledby="week<%= events[i].week %><%= j %>"
+                                    <div id="weekc<%= events[i].week %><%= j %>" class="collapse <%= show %>" aria-labelledby="week<%= events[i].week %><%= j %>"
                                         data-parent="#accordion">
                                         <div class="card-body">
                                             <p><%= events[i].events[j].description %></p>
@@ -176,8 +176,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <% } %>
                             </div>
+                            <% } %>
                         </div>
                         <% } %>
                         
